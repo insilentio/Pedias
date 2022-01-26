@@ -1,0 +1,9 @@
+# code used to initialize dvdpedia
+
+SELECT Z_ENT, Z_OPT,  -31588014848 AS ZDATE, 'Anschaudatum unbekannt' AS ZNAME
+ FROM ZENTRY
+ WHERE ZTAGS='Gesehen'
+
+UPDATE ZENTRY
+SET ZLASTSEEN=-31588014848
+WHERE ZLASTSEEN IS NULL AND ZTAGS='Gesehen'
